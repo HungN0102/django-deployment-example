@@ -51,7 +51,6 @@ def special(request):
 @login_required 
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect(reverse('index'))
             
 def user_login(request):
     if request.method == 'POST':
@@ -63,7 +62,6 @@ def user_login(request):
         if user:
             if user.is_active:
                 login(request, user)
-                return HttpResponseRedirect(reverse('index'))
             else:
                 return HttpResponse('Account Not Active')
         else:

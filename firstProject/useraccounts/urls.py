@@ -4,6 +4,6 @@ from useraccounts import views
 app_name = 'useraccounts'
 
 urlpatterns = [
-    url('^userindex/$', views.register, name='index'),
+#    url('^$', views.index, name='index'),
     url('^register/$', views.register, name='register')
 ]

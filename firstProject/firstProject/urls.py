@@ -16,16 +16,13 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from django.conf.urls import include
-from first_app import views 
 import useraccounts
 
 urlpatterns = [
-    url(r'^$', views.index, name='index'),
-    url(r'^first_app/', include('first_app.urls')),
-    url(r'^accounts/', include('accounts.urls')),
     url(r'^admin/', admin.site.urls),
     url(r'^useraccounts/', include('useraccounts.urls')),
     url(r'^logout/$', useraccounts.views.user_logout, name='logout'),
     url(r'^special/$', useraccounts.views.special, name='special'),
     url(r'^user_login/$', useraccounts.views.user_login, name='login'),
+    url(r'^$', useraccounts.views.index, name='index'),
 ]
